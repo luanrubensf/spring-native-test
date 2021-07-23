@@ -1,0 +1,26 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/spring_test
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      use-new-id-generator-mappings: false
+management:
+  endpoint:
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
